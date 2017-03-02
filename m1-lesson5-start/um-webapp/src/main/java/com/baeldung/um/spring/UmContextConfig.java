@@ -9,7 +9,6 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @Configuration
 @ComponentScan({ "com.baeldung.um.model" })
 @EnableAspectJAutoProxy(proxyTargetClass = true)
-@PropertySource({ "classpath:settings.properties" })
 public class UmContextConfig {
 
     public UmContextConfig() {

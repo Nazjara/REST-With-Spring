@@ -67,7 +67,7 @@
                         <type>embedded</type>
                         <systemProperties>
                             <envTarget>local</envTarget>
-                            <persistenceTarget>cargo</persistenceTarget>
+                            <persistenceTarget>prod</persistenceTarget>
                         </systemProperties>
                     </container>
                     <configuration>
