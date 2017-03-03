@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -13,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 @Configuration
 @EnableWebSecurity
 @ComponentScan("com.baeldung.um.security")
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class UmJavaSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -29,9 +31,20 @@ public class UmJavaSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(final HttpSecurity http) throws Exception {
         // @formatter:off
         http.
-        authorizeRequests().        
-        anyRequest().
-        authenticated().
+        authorizeRequests().
+
+//        anyRequest().
+//        antMatchers("/api/**").
+        regexMatchers("^/login.*").
+
+//        permitAll().
+//        anonymous().
+//        authenticated().
+//        fullyAuthenticated().
+//        denyAll().
+//        hasAuthority("ROLE_SOMETHING").
+//        hasAnyAuthority("ROLE_SOMETHING", "ROLE_SOMETHING2").
+        access("hasRole('ROLE_SOMETHING')").
         and().
         httpBasic().and().
         sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().

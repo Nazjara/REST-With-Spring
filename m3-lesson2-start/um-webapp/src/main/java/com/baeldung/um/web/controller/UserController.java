@@ -94,7 +94,7 @@ public class UserController extends AbstractController<User> implements ISorting
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.OK)
-    @Secured(Privileges.CAN_USER_WRITE)
+    @Secured("CAN_UPDATE_USER")
     public void update(@PathVariable("id") final Long id, @RequestBody @Valid final User resource) {
         updateInternal(id, resource);
     }
@@ -103,7 +103,7 @@ public class UserController extends AbstractController<User> implements ISorting
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @Secured(Privileges.CAN_USER_WRITE)
+    @Secured("CAN_DELETE_USER")
     public void delete(@PathVariable("id") final Long id) {
         deleteByIdInternal(id);
     }
