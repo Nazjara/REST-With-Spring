@@ -166,7 +166,7 @@ public class RoleSimpleLiveTest {
     }
 
     private final Role createNewResource() {
-        return new Role(randomAlphabetic(8), Sets.<Privilege> newHashSet());
+        return new Role(randomAlphabetic(8), Sets.newHashSet());
     }
 
 }
