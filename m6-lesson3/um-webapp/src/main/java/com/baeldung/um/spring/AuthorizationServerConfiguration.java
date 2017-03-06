@@ -63,7 +63,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
      endpoints
      .tokenStore(tokenStore())
      .authenticationManager(authenticationManager)
-     .accessTokenConverter(accessTokenConverter());;
+     .accessTokenConverter(accessTokenConverter());
   // @formatter:on
     }
 
