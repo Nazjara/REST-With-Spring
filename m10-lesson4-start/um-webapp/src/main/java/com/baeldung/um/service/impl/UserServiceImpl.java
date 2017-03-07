@@ -3,6 +3,7 @@ package com.baeldung.um.service.impl;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.baeldung.um.service.AsyncService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -105,6 +106,17 @@ public class UserServiceImpl implements IUserService {
         principalService.create(newPrincipalEntity);
         dto.setId(newPrincipalEntity.getId());
         return dto;
+    }
+
+    @Override
+    public UserDto createSlow(UserDto dto) {
+        try {
+            Thread.sleep(AsyncService.DELAY);
+            return create(dto);
+        }
+        catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     // update
