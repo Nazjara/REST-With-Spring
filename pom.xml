@@ -116,11 +116,11 @@
 
 		<commons-collections.version>3.2.1</commons-collections.version>
 		<hibernate.version>5.0.5.Final</hibernate.version>
-		<hibernate-validator.version>5.2.2.Final</hibernate-validator.version>
+		<hibernate-validator.version>5.2.5.Final</hibernate-validator.version>
 		<httpclient.version>4.5.1</httpclient.version>
 		<jackson.version>2.10.0</jackson.version>
 		<javassist.version>3.20.0-GA</javassist.version>
-		<mysql.version>5.1.38</mysql.version>
+		<mysql.version>8.0.16</mysql.version>
 		
 		<slf4j.version>1.7.13</slf4j.version>
 
@@ -135,7 +135,7 @@
 
 		<!-- commons and utils -->
 		<commons-lang3.version>3.4</commons-lang3.version>
-		<guava.version>18.0</guava.version>
+		<guava.version>24.1.1-android</guava.version>
 
 		<!-- UNSORTED -->
 		<commons-codec.version>1.10</commons-codec.version>
